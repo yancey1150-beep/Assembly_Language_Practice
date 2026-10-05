@@ -4,7 +4,7 @@
     {
       "label": "Build macOS ARM64 Assembly",
       "type": "shell",
-      "command": "as -arch arm64 -o main.o main.s && ld -o main main.o -lSystem -syslibroot `xcrun -sdk macosx --show-sdk-path` -e _main",
+      "command": "as -g -arch arm64 -o ${fileBasenameNoExtension}.o ${file} && ld -arch arm64 -o ${fileBasenameNoExtension} ${fileBasenameNoExtension}.o -lSystem -syslibroot $(xcrun -sdk macosx --show-sdk-path) -e _main",
       "group": { "kind": "build", "isDefault": true }
     }
   ]
