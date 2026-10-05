@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build macOS ARM64 Assembly",
+      "type": "shell",
+      "command": "as -arch arm64 -o main.o main.s && ld -o main main.o -lSystem -syslibroot `xcrun -sdk macosx --show-sdk-path` -e _main",
+      "group": { "kind": "build", "isDefault": true }
+    }
+  ]
+}
